@@ -71,4 +71,14 @@ function mostrarItens() {
             mostrarItens();
         });
     });
+
+    const deletarItens = document.querySelectorAll(".deletar");
+    deletarItens.forEach((input) => {
+        input.addEventListener("click", (evento) => {
+            const valorElemento =
+                evento.target.parentElement.parentElement.getAttribute("data-value");
+            listaDeItens.splice(valorElemento, 1);
+            mostrarItens();
+        });
+    });
 }
